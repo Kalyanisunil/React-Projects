@@ -9,13 +9,13 @@ function App() {
 }>
       <ul className="text-decoration-none ">
         <li>
-        {foodname1}
+        {foodname1} <button>Click</button>
         </li>
         <li>
-        {foodname1}
+        {foodname1} <button>Click</button>
         </li>
         <li>
-        {foodname1}
+        {foodname1} <button>Click</button>
         </li>
       
       </ul>
