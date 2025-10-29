@@ -1,23 +1,22 @@
-
-import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Home from "./Home";
-import Create from "./Create";
-import Update from "./Update";
-import Delete from "./Delete";
-import Read from "./Read";
-
+import React from "react";
+import { BrowserRouter as Router, Routes, Route, Navigate } from "react-router-dom";
+import Signup from "./components/Signup";
+import Login from "./components/Login";
+import Navbar from "./components/Navbar";
+import WaterForm from "./components/Waterform";
 
 function App() {
+  const loggedInUser = localStorage.getItem("loggedInUser");
+
   return (
-    <BrowserRouter>
+    <Router>
+      {loggedInUser && <Navbar />}
       <Routes>
-        <Route path="/" element={<Home />}></Route>
-        <Route path="/create" element={<Create />}></Route>
-        <Route path="/update/:id" element={<Update />}></Route>
-        <Route path="/delete" element={<Delete />}></Route>
-         <Route path="/read/:id" element={<Read/>}></Route>
+        <Route path="/" element={loggedInUser ? <Navigate to="/add" /> : <Login />} />
+        <Route path="/signup" element={<Signup />} />
+        <Route path="/add" element={loggedInUser ? <WaterForm /> : <Navigate to="/" />} />
       </Routes>
-    </BrowserRouter>
+    </Router>
   );
 }
 
