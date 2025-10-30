@@ -8,7 +8,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 const root = ReactDOM.createRoot(document.getElementById("root"));
 
 
-//provider connects all the components with store in redux
+// provider components ne redux store il connect chyyum
 root.render(
   <React.StrictMode>
     

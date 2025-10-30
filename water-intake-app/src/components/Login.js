@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { useDispatch } from "react-redux";
 import { setUser } from "./auth/authSlice";
 import { useNavigate } from "react-router-dom";
+import Navbar from "./Navbar";
 
 function Login() {
   const [email, setEmail] = useState("");
@@ -17,14 +18,16 @@ function Login() {
     );
 
     if (user) {
-      dispatch(setUser(user.name));
+    dispatch(setUser(user));
       navigate("/add");
     } else {
       setError("Invalid email or password");
     }
   }
 
- return (
+  return (<>
+ 
+ 
   <div className="container mt-5" style={{ maxWidth: "400px" }}>
     <div className="card p-4 shadow">
       <h2 className="text-center mb-4">Login</h2>
@@ -66,7 +69,8 @@ function Login() {
         Go to Register
       </button>
     </div>
-  </div>
+    </div>
+     </>
 );
 
 }

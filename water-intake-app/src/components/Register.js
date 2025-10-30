@@ -36,7 +36,7 @@ function Register() {
 
  return (
   <div>
-    <Navbar />
+    
     
     <div className="container mt-5" style={{ maxWidth: "450px" }}>
       <div className="card p-4 shadow">
@@ -91,7 +91,13 @@ function Register() {
         <button className="btn btn-primary w-100" onClick={handleRegister}>
           Register
         </button>
-      </div>
+       </div>
+       <button
+        className="btn btn-link mt-3 w-100"
+        onClick={() => navigate("/login")}
+      >
+        Go to Login
+      </button>
     </div>
   </div>
 );
