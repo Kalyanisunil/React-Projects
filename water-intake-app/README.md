@@ -1,70 +1,63 @@
-# Getting Started with Create React App
+💧 Daily Water Intake Tracker
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Track your daily hydration, stay accountable, and visualize your progress — all in one simple React app!
 
-## Available Scripts
 
-In the project directory, you can run:
+🎬 [Clicke here to Watch Demo Video](https://youtu.be/HO2RhQaYjuE)
 
-### `npm start`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+About the Project:
+This is a simple water tracking app that allows users to:
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+Register and log in securely
 
-### `npm test`
+Record their daily water intake (in ml)
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+View their entries between selected dates
 
-### `npm run build`
+Calculate total water intake in a date range
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Delete or update entries easily
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Logout securely using a confirmation modal
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Each user can view only their own entries, keeping data private and organized.
 
-### `npm run eject`
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Features
+✅ User Authentication (Register / Login)
+✅ Add, View, and Delete Water Entries
+✅ Date Range Filter to Calculate Total Intake
+✅ Responsive Design using Bootstrap
+✅ Logout Confirmation Modal
+✅ Local Storage for saving data offline
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+Tech Stack
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+⚛️ React JS – Frontend library for building the user interface
 
-## Learn More
+🧠 Redux Toolkit – For managing and storing app state efficiently
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+🌐 React Router DOM – Handles navigation and routing between pages
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+🎨 Bootstrap 5 – Provides responsive design and pre-styled UI components
 
-### Code Splitting
+💾 Local Storage – Used for saving user data and entries persistently on the browser
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+🧰 JavaScript (ES6+) – Core programming language used
 
-### Analyzing the Bundle Size
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+How to Run Locally?->
+# 1️⃣ Clone the repository
+git clone https://github.com/yourusername/water-tracker.git
 
-### Making a Progressive Web App
+# 2️⃣ Navigate into the project folder
+cd water-tracker
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+# 3️⃣ Install dependencies
+npm install
 
-### Advanced Configuration
+# 4️⃣ Run the app
+npm start
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
