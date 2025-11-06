@@ -1,77 +1,101 @@
+// https://preline.co/docs/navbar.html#image
 import { Link } from "react-router-dom";
 
 export default function Navbar() {
   return (
-    <>
-      <nav className="bg-white border-gray-200 py-2.5 dark:bg-gray-900">
-        <div className="flex flex-wrap items-center justify-between max-w-screen-xl px-4 mx-auto">
-          <span className="self-center text-xl font-semibold whitespace-nowrap dark:text-white">
-            Landwind
-          </span>
-
-          <div className="flex items-center lg:order-2">
+    <header className="relative flex flex-wrap sm:justify-start sm:flex-nowrap w-full bg-white text-sm py-3 dark:bg-neutral-800">
+      <nav className="max-w-[85rem] w-full mx-auto px-4 sm:flex sm:items-center sm:justify-between">
+        <div className="flex items-center justify-between">
+          <a
+            className="flex-none text-xl font-semibold dark:text-white focus:outline-none focus:opacity-80"
+            href="#"
+            aria-label="Brand"
+          >
+            <img
+              className="w-10 h-auto"
+              src=""
+              alt="Logo"
+            />
+          </a>
+          <div className="sm:hidden">
             <button
-              data-collapse-toggle="mobile-menu-2"
               type="button"
-              className="inline-flex items-center p-2 ml-1 text-sm text-gray-500 rounded-lg lg:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
-              aria-controls="mobile-menu-2"
-              aria-expanded="true"
+              className="hs-collapse-toggle relative size-7 flex justify-center items-center gap-x-2 rounded-lg border border-gray-200 bg-white text-gray-800 shadow-sm hover:bg-gray-50 focus:outline-none focus:bg-gray-50 disabled:opacity-50 disabled:pointer-events-none dark:bg-transparent dark:border-neutral-700 dark:text-white dark:hover:bg-white/10 dark:focus:bg-white/10"
+              id="hs-navbar-example-collapse"
+              aria-expanded="false"
+              aria-controls="hs-navbar-example"
+              aria-label="Toggle navigation"
+              data-hs-collapse="#hs-navbar-example"
             >
-              <span className="sr-only">Open main menu</span>
               <svg
-                className="w-6 h-6"
-                fill="currentColor"
-                viewBox="0 0 20 20"
+                className="hs-collapse-open:hidden shrink-0 size-4"
                 xmlns="http://www.w3.org/2000/svg"
+                width={24}
+                height={24}
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth={2}
+                strokeLinecap="round"
+                strokeLinejoin="round"
               >
-                <path
-                  fillRule="evenodd"
-                  d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z"
-                  clipRule="evenodd"
-                ></path>
+                <line x1={3} x2={21} y1={6} y2={6} />
+                <line x1={3} x2={21} y1={12} y2={12} />
+                <line x1={3} x2={21} y1={18} y2={18} />
               </svg>
+              <svg
+                className="hs-collapse-open:block hidden shrink-0 size-4"
+                xmlns="http://www.w3.org/2000/svg"
+                width={24}
+                height={24}
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth={2}
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              >
+                <path d="M18 6 6 18" />
+                <path d="m6 6 12 12" />
+              </svg>
+              <span className="sr-only">Toggle navigation</span>
             </button>
           </div>
+        </div>
+        <div
+          id="hs-navbar-example"
+          className="hidden hs-collapse overflow-hidden transition-all duration-300 basis-full grow sm:block"
+          aria-labelledby="hs-navbar-example-collapse"
+        >
+          <div className="flex flex-col gap-5 mt-5 sm:flex-row sm:items-center sm:justify-end sm:mt-0 sm:ps-5">
+           <Link
+  className="font-medium text-blue-500 focus:outline-none"
+  to="/"
+>
+  Home
+</Link>
+            <Link
+  className="font-medium text-gray-600 hover:text-gray-400"
+  to="/account"
+>
+  Account
+</Link>
 
-          <div
-            className="items-center justify-between w-full lg:flex lg:w-auto lg:order-1"
-            id="mobile-menu-2"
-          >
-            <ul className="flex flex-col mt-4 font-medium lg:flex-row lg:space-x-8 lg:mt-0">
-              <li>
-                <Link to="/" className="block py-2 pl-3 pr-4 text-gray-700 rounded hover:bg-gray-100 lg:hover:bg-transparent lg:hover:text-blue-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white">
-                  Home
-                </Link>
-              </li>
-              <li>
-                <Link to="/teams" className="block py-2 pl-3 pr-4 text-gray-700 rounded hover:bg-gray-100 lg:hover:bg-transparent lg:hover:text-blue-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white">
-                  Teams
-                </Link>
-              </li>
-              <li>
-                <Link to="/drivers" className="block py-2 pl-3 pr-4 text-gray-700 rounded hover:bg-gray-100 lg:hover:bg-transparent lg:hover:text-blue-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white">
-                  Drivers
-                </Link>
-              </li>
-              <li>
-                <Link to="/races" className="block py-2 pl-3 pr-4 text-gray-700 rounded hover:bg-gray-100 lg:hover:bg-transparent lg:hover:text-blue-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white">
-                  Races
-                </Link>
-              </li>
-              <li>
-                <Link to="/results" className="block py-2 pl-3 pr-4 text-gray-700 rounded hover:bg-gray-100 lg:hover:bg-transparent lg:hover:text-blue-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white">
-                  Results
-                </Link>
-              </li>
-              <li>
-                <Link to="/contact" className="block py-2 pl-3 pr-4 text-gray-700 rounded hover:bg-gray-100 lg:hover:bg-transparent lg:hover:text-blue-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white">
-                  Contact
-                </Link>
-              </li>
-            </ul>
+           <Link
+  className="font-medium text-gray-600 hover:text-gray-400"
+  to="/work"
+>
+  Work
+</Link>
+            <Link
+  className="font-medium text-gray-600 hover:text-gray-400"
+  to="/blog"
+>
+  Blog
+</Link>
           </div>
         </div>
       </nav>
-    </>
+    </header>
   );
 }
