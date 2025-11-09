@@ -12,6 +12,7 @@ import {
   MDBDropdownMenu,
   MDBDropdownToggle,
   MDBDropdownItem,
+  MDBNavbarBrand
 } from 'mdb-react-ui-kit';
 
 export default function CNavbar() {
@@ -20,6 +21,15 @@ export default function CNavbar() {
   return (
     <MDBNavbar expand='sm' dark bgColor='dark'>
       <MDBContainer fluid>
+         <MDBNavbarBrand href='#'>
+            <img
+              src="https://upload.wikimedia.org/wikipedia/commons/f/f2/New_era_F1_logo.png"
+              height='30'
+              alt=''
+              loading='lazy'
+            />
+         
+          </MDBNavbarBrand>
         <MDBNavbarToggler
           type='button'
           data-target='#navbarRightAlignExample'
@@ -30,23 +40,48 @@ export default function CNavbar() {
         >
           <MDBIcon icon='bars' fas />
         </MDBNavbarToggler>
-
+      
         <MDBCollapse navbar open={openNavRight}>
           <MDBNavbarNav right fullWidth={false} className='ms-auto mb-2 mb-lg-0'>
-            <MDBNavbarItem>
+            
+            {/* <MDBNavbarItem>
               <MDBNavbarLink active aria-current='page' href='#'>
-                Home
+                
               </MDBNavbarLink>
-            </MDBNavbarItem>
+            </MDBNavbarItem> */}
             <MDBNavbarItem>
-              <MDBNavbarLink href='#'>Link</MDBNavbarLink>
+              <MDBNavbarLink href='#'>Schedule</MDBNavbarLink>
+            </MDBNavbarItem>
+              <MDBNavbarItem>
+              <MDBNavbarLink href='#'>Results</MDBNavbarLink>
             </MDBNavbarItem>
 
             <MDBNavbarItem>
               <MDBDropdown>
                 <MDBDropdownToggle tag='a' className='nav-link'>
-                  Dropdown
-                </MDBDropdownToggle>
+                  Drivers                </MDBDropdownToggle>
+                <MDBDropdownMenu>
+                  <MDBDropdownItem link>Action</MDBDropdownItem>
+                  <MDBDropdownItem link>Another action</MDBDropdownItem>
+                  <MDBDropdownItem link>Something else here</MDBDropdownItem>
+                </MDBDropdownMenu>
+              </MDBDropdown>
+            </MDBNavbarItem>
+             <MDBNavbarItem>
+              <MDBDropdown>
+                <MDBDropdownToggle tag='a' className='nav-link'>
+                  Teams                </MDBDropdownToggle>
+                <MDBDropdownMenu>
+                  <MDBDropdownItem link>Action</MDBDropdownItem>
+                  <MDBDropdownItem link>Another action</MDBDropdownItem>
+                  <MDBDropdownItem link>Something else here</MDBDropdownItem>
+                </MDBDropdownMenu>
+              </MDBDropdown>
+            </MDBNavbarItem>
+             <MDBNavbarItem>
+              <MDBDropdown>
+                <MDBDropdownToggle tag='a' className='nav-link'>
+                  Fantasy & Gaming                </MDBDropdownToggle>
                 <MDBDropdownMenu>
                   <MDBDropdownItem link>Action</MDBDropdownItem>
                   <MDBDropdownItem link>Another action</MDBDropdownItem>
