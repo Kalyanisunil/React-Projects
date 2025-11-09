@@ -12,14 +12,17 @@ import {
   MDBDropdownMenu,
   MDBDropdownToggle,
   MDBDropdownItem,
-  MDBNavbarBrand
+  MDBNavbarBrand,
+  
 } from 'mdb-react-ui-kit';
+import NavbarTop from './NavbarTop';
 
 export default function CNavbar() {
   const [openNavRight, setOpenNavRight] = useState(false);
 
-  return (
-    <MDBNavbar expand='sm' dark bgColor='dark'>
+  return (<>
+    <NavbarTop></NavbarTop>
+    <MDBNavbar expand='sm' dark bgColor='dark' className="navbar-bg-image">
       <MDBContainer fluid>
          <MDBNavbarBrand href='#'>
             <img
@@ -42,7 +45,7 @@ export default function CNavbar() {
         </MDBNavbarToggler>
       
         <MDBCollapse navbar open={openNavRight}>
-          <MDBNavbarNav right fullWidth={false} className='ms-auto mb-2 mb-lg-0'>
+          <MDBNavbarNav right fullWidth={false} className=' mb-2 mb-lg-0'>
             
             {/* <MDBNavbarItem>
               <MDBNavbarLink active aria-current='page' href='#'>
@@ -94,9 +97,12 @@ export default function CNavbar() {
                 Disabled
               </MDBNavbarLink>
             </MDBNavbarItem> */}
+          
           </MDBNavbarNav>
+          
         </MDBCollapse>
       </MDBContainer>
     </MDBNavbar>
+    </>
   );
 }
