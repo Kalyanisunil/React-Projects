@@ -1,10 +1,11 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import Navbar from "./components/Navbar";
+
+import CNavbar from "./components/CNavbar";
 
 function App() {
   return (
     <Router>
-      <Navbar />
+      <CNavbar />
       <Routes>
         <Route path="/" element={<h1>Home Page</h1>} />
         <Route path="/account" element={<h1>Account Page</h1>} />
@@ -15,4 +16,4 @@ function App() {
   );
 }
 
-export default App;
+export default CNavbar;
