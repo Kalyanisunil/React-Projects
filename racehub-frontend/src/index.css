@@ -1,7 +1,9 @@
 .body {
-  background-color: #000; /* Pure black */
+  background-color: #0a0a0a; /* Pure black */
+  
   color: #fff; /* White text for contrast */
   font-family: 'Poppins', sans-serif; /* Optional clean font */
+  background-attachment: fixed; /* keeps pattern still when scrolling */
 }
 
 .right-links {
@@ -15,14 +17,24 @@
 }
 
 .navbar-bg-image {
-  background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR8M10o60SEPD3X7LdOzwvK1hIY52fD56F6bw&s"); /* example image */
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
+   background-image: repeating-linear-gradient(
+    135deg,          /* diagonal angle */
+    #0a0a0a 0px,
+    #0a0a0a 25px,
+    #111111 40px,
+    #111111 80px
+  );
 }
 
 
 .navtop-color{
-  background-color: black;
+  background-color: #0a0a0a;
   
+}
+
+.vdoCard 
+{
+  margin: auto;
+  width: 700px;
+  height: 100px;
 }
