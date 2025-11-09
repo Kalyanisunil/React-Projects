@@ -4,7 +4,8 @@ import CNavbar from "./components/CNavbar";
 import TodayRace from "./components/TodayRace";
 import './index.css';
 import TicketCard from "./components/TicketCard";
-import VideoCard from "./components/VideoCard";
+
+import FeaturedSection from "./components/FeaturedSection";
 
 function App() {
   return (
@@ -12,7 +13,8 @@ function App() {
     <CNavbar />
       <TodayRace></TodayRace>
       <TicketCard></TicketCard>
-      <VideoCard></VideoCard>
+     
+      <FeaturedSection></FeaturedSection>
      <Router>
       
       <Routes>
