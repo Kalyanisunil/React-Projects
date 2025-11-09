@@ -18,7 +18,7 @@ export default function CNavbar() {
   const [openNavRight, setOpenNavRight] = useState(false);
 
   return (
-    <MDBNavbar expand='lg' light bgColor='light'>
+    <MDBNavbar expand='sm' dark bgColor='dark'>
       <MDBContainer fluid>
         <MDBNavbarToggler
           type='button'
@@ -32,7 +32,7 @@ export default function CNavbar() {
         </MDBNavbarToggler>
 
         <MDBCollapse navbar open={openNavRight}>
-          <MDBNavbarNav right fullWidth={false} className='mb-2 mb-lg-0'>
+          <MDBNavbarNav right fullWidth={false} className='ms-auto mb-2 mb-lg-0'>
             <MDBNavbarItem>
               <MDBNavbarLink active aria-current='page' href='#'>
                 Home
@@ -54,11 +54,11 @@ export default function CNavbar() {
                 </MDBDropdownMenu>
               </MDBDropdown>
             </MDBNavbarItem>
-            <MDBNavbarItem>
+            {/* <MDBNavbarItem>
               <MDBNavbarLink disabled href='#' tabIndex={-1} aria-disabled='true'>
                 Disabled
               </MDBNavbarLink>
-            </MDBNavbarItem>
+            </MDBNavbarItem> */}
           </MDBNavbarNav>
         </MDBCollapse>
       </MDBContainer>
