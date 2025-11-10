@@ -1,14 +1,17 @@
-import React from 'react'
+import React from 'react';
 import { NavLink } from 'react-router-dom';
 
 function TicketCard() {
   return (
-      <div className='container mb-4'>
-        
-              <img src='ticketimg.png' alt='ticket'></img>
-          
+    <div className="container text-center my-4">
+      <img
+        src="ticketimg.png"
+        alt="ticket"
+        className="img-fluid mx-auto d-block"
+        style={{ maxWidth: '900px' }}
+      />
     </div>
-  )
+  );
 }
 
 export default TicketCard;
