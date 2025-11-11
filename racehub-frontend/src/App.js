@@ -1,31 +1,57 @@
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
-import CNavbar from "./components/CNavbar";
-import TodayRace from "./components/TodayRace";
+
 import './index.css';
-import TicketCard from "./components/TicketCard";
 
-import FeaturedSection from "./components/FeaturedSection";
+import AppRouter from "./components/AppRouter";
 
 function App() {
   return (
     <div className="body">
-    <CNavbar />
-      <TodayRace></TodayRace>
-      <TicketCard></TicketCard>
+    
+      <AppRouter></AppRouter>
      
-      <FeaturedSection></FeaturedSection>
-     <Router>
-      
-      <Routes>
-        {/* <Route path="/" element={<Home />} />
-        <Route path="/signup" element={<Signup />} />
-          <Route path="/subscribe" element={<Subscribe />} /> */}
-          {/* <Route path="/tickets" element={<></>}/> */}
-      </Routes>
-      </Router>
       </div>
   );
 }
 
 export default App;
+
+// import React from "react";
+// import { BrowserRouter, Routes, Route, NavLink } from "react-router-dom";
+// import RaceResultTable from "./components/RaceResultTable";
+
+// function Home() {
+//   return (<>
+      
+           
+//   </>);
+// }
+// function Schedule() {
+//   return <h2>Schedule Page</h2>;
+// }
+// function Results() {
+//   return <RaceResultTable></RaceResultTable>;
+// }
+
+// function CNavbar() {
+//   return (
+//     <nav>
+//       <NavLink to="/">Home</NavLink> |{" "}
+//       <NavLink to="/schedule">Schedule</NavLink> |{" "}
+//       <NavLink to="/results">Results</NavLink>
+//     </nav>
+//   );
+// }
+
+// export default function App() {
+//   return (
+//     <BrowserRouter>
+//       <CNavbar />
+//       <Routes>
+//         <Route path="/" element={<Home />} />
+//         <Route path="/schedule" element={<Schedule />} />
+//         <Route path="/results" element={<Results />} />
+//       </Routes>
+//     </BrowserRouter>
+//   );
+// }
