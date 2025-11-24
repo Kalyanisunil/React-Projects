@@ -83,10 +83,10 @@ export default function RecipeDetails() {
       <div className="container my-5">
         <div className="card shadow p-4">
 
-          <img src={recipe.img} className="img-fluid" />
+          <img src={recipe.image} className="img-fluid" />
 
           <h2 className="fw-bold">{recipe.title}</h2>
-          <p className="text-muted">{recipe.description}</p>
+         
 
           <h4 className="mt-4">Ingredients</h4>
           <ul>

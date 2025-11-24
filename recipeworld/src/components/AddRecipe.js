@@ -12,43 +12,37 @@ export default function AddRecipe() {
     steps: "",
   });
 
-  function handleChange(e) {
-    const { name, type, files, value } = e.target;
+ function handleChange(e) {
+  const { name, value } = e.target;
 
-    setInputs({
-      ...inputs,
-      [name]: type === "file" ? files[0] : value,
-    });
+  setInputs({
+    ...inputs,
+    [name]: value,
+  });
+}
+
+
+
+async function handleSubmit(e) {
+  e.preventDefault();
+
+  try {
+    const res = await axios.post(
+      "http://localhost:8080/recipes/addRecipe",
+      inputs,  // send JSON
+      {
+        headers: { "Content-Type": "application/json" },
+      }
+    );
+
+    alert("Recipe Added Successfully!");
+
+  } catch (err) {
+    console.error(err);
+    alert("Something went wrong!");
   }
+}
 
-  async function handleSubmit(e) {
-    e.preventDefault();
-
-    // Create FormData
-    const formData = new FormData();
-    formData.append("title", inputs.title);
-    formData.append("image", inputs.image);   // file
-    formData.append("description", inputs.description);
-    formData.append("ingredients", inputs.ingredients);
-    formData.append("steps", inputs.steps);
-
-    try {
-      const res = await axios.post(
-        "http://localhost:8080/recipes/addRecipe",
-        formData,
-        {
-          headers: { "Content-Type": "multipart/form-data" },
-        }
-      );
-
-      console.log("Recipe Added:", res.data);
-      alert("Recipe Added Successfully!");
-
-    } catch (err) {
-      console.error("Error adding recipe:", err);
-      alert("Something went wrong!");
-    }
-  }
 
   return (
     <>
@@ -65,22 +59,14 @@ export default function AddRecipe() {
             className="form-control mb-3"
             onChange={handleChange}
           />
-
-          <input
-            type="file"
-            name="image"
-            accept="image/*"
-            className="form-control mb-3"
-            onChange={handleChange}
-          />
-
-          <textarea
-            name="description"
-            placeholder="Short description"
-            className="form-control mb-3"
-            rows="2"
-            onChange={handleChange}
-          />
+<input
+  type="text"
+  name="image"
+  placeholder="Image URL"
+  className="form-control mb-3"
+  onChange={handleChange}
+/>
+         
 
           <textarea
             name="ingredients"

@@ -14,6 +14,7 @@ export default function Hero() {
 
 <ProfileModal open={openProfile} onClose={() => setOpenProfile(false)} />
       <Carousel />
+      <h1 className="  text-center mt-5">Trending Recipes</h1>
       <RecipeCards />
       <Footer />
     </>
