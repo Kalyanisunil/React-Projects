@@ -44,7 +44,7 @@ export default function Login() {
     try {
       const res = await axios.post("http://localhost:8080/recipes/login", loginData);
       console.log("Login success:", res.data);
-
+      localStorage.setItem("token",res.data.token)
       
       navigate("/"); // go home
     } catch (err) {

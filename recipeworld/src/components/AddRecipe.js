@@ -27,14 +27,19 @@ export default function AddRecipe() {
     e.preventDefault();
 
     try {
+     var  token=localStorage.getItem("token")
       const res = await axios.post(
         "http://localhost:8080/recipes/addRecipe",
-        inputs, // send JSON
+        inputs,
         {
-          headers: { "Content-Type": "application/json" },
+          headers: { 
+            
+            "Authorization":token,
+            "Content-Type": "application/json"
+          },
         }
       );
-
+      console.log(token)
       alert("Recipe Added Successfully!");
     } catch (err) {
       console.error(err);
