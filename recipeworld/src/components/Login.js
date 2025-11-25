@@ -21,7 +21,7 @@ export default function Login() {
 
   const navigate = useNavigate();
 
-  // Handle Signup submit
+ 
   const handleSignup = async (e) => {
     e.preventDefault(); // prevent page reload
 
@@ -29,15 +29,15 @@ export default function Login() {
       const res = await axios.post("http://localhost:8080/recipes/signup", signupData);
       console.log("Signup success:", res.data);
 
-      alert("Signup successful!");
-      navigate("/"); // go home or login page
+      // alert("Signup successful!");
+      navigate("/login"); 
     } catch (err) {
       console.error("Signup error:", err);
       alert("Signup failed!");
     }
   };
 
-  // Handle Login submit
+ 
   const handleLogin = async (e) => {
     e.preventDefault();
 
@@ -45,7 +45,7 @@ export default function Login() {
       const res = await axios.post("http://localhost:8080/recipes/login", loginData);
       console.log("Login success:", res.data);
 
-      alert("Login successful!");
+      
       navigate("/"); // go home
     } catch (err) {
       console.error("Login error:", err);
@@ -96,7 +96,6 @@ export default function Login() {
           </form>
         </div>
 
-        {/* ================= SIGN IN ================= */}
         <div className="form-container sign-in-container">
           <form onSubmit={handleLogin}>
             <h1>Sign in</h1>
@@ -126,7 +125,6 @@ export default function Login() {
           </form>
         </div>
 
-        {/* ================= OVERLAY ================= */}
         <div className="overlay-container">
           <div className="overlay">
             <div className="overlay-panel overlay-left">

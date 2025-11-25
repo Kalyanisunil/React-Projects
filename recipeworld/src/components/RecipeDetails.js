@@ -1,68 +1,25 @@
-// import React from "react";
-// import { useParams } from "react-router-dom";
-// import Navbar from "../components/Navbar";
-// import Footer from "../components/Footer";
-
-// export default function RecipeDetails() {
-//   const { id } = useParams(); // dynamic ID
-
-//   const recipe = {
-//     title: "Sample Recipe",
-//     img: "/img/bg-img/r1.jpg",
-//     description: "A tasty recipe to enjoy.",
-//     ingredients: ["Salt", "Pepper", "Olive Oil"],
-//     steps: ["Mix ingredients", "Cook for 10 mins"],
-//   };
-
-//   return (
-//     <>
-//       <Navbar />
-
-//       <div className="container my-5">
-//         <div className="card shadow p-4">
-//           <img src={recipe.img} className="img-fluid" />
-
-//           <h2 className="fw-bold">{recipe.title}</h2>
-//           <p className="text-muted">{recipe.description}</p>
-
-//           <h4 className="mt-4">Ingredients</h4>
-//           <ul>
-//             {recipe.ingredients.map((i, idx) => (
-//               <li key={idx}>{i}</li>
-//             ))}
-//           </ul>
-
-//           <h4 className="mt-4">Steps</h4>
-//           <ol>
-//             {recipe.steps.map((s, idx) => (
-//               <li key={idx}>{s}</li>
-//             ))}
-//           </ol>
-//         </div>
-//       </div>
-
-//       <Footer />
-//     </>
-//   );
-// }
 
 import React, { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import axios from "axios";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 
 export default function RecipeDetails() {
-  const { id } = useParams(); // get recipe id from URL
+  const { id } = useParams(); 
+  const [recipe, setRecipe] = useState({ ingredients: [], steps: [] });
 
-  const [recipe, setRecipe] = useState(null); // initially empty
+  
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     async function fetchRecipe() {
       try {
         const res = await axios.get(`http://localhost:8080/recipes/recipe/${id}`);
-        setRecipe(res.data);    // store fetched recipe
+        console.log("Recipe Data:", res.data);
+
+        setRecipe(res.data);   
+        console.log(res.data.cooking_time);
       } catch (error) {
         console.error("Error fetching recipe:", error);
       } finally {
@@ -79,29 +36,59 @@ export default function RecipeDetails() {
   return (
     <>
       <Navbar />
-
+     
       <div className="container my-5">
+         <Link 
+                    to={`/`} 
+                    className="text-decoration-none text-dark"
+      > <i className="back"></i>
+        </Link>
         <div className="card shadow p-4">
+  <div className="row align-items-center">
 
-          <img src={recipe.image} className="img-fluid" />
+    
+    <div className="col-md-6 text-center">
+      <img
+        src={recipe.image}
+        alt="Recipe"
+        className="img-fluid rounded"
+        style={{ maxWidth: "100%", height: "auto" }}
+      />
+    </div>
 
-          <h2 className="fw-bold">{recipe.title}</h2>
-         
+    <div className="col-md-6">
+              <h2 className="fw-bold">{recipe.title}</h2>
+               <h4 className="mt-4">Cooking Time</h4>
+              <p>{recipe.cooking_time}</p>
 
-          <h4 className="mt-4">Ingredients</h4>
-          <ul>
-            {recipe.ingredients.map((i, idx) => (
-              <li key={idx}>{i}</li>
-            ))}
-          </ul>
+              <h4 className="mt-4">Difficulty</h4>
+              <p>{recipe.difficulty}</p>
 
-          <h4 className="mt-4">Steps</h4>
-          <ol>
-            {recipe.steps.map((s, idx) => (
-              <li key={idx}>{s}</li>
-            ))}
-          </ol>
-        </div>
+      <h4 className="mt-4">Ingredients</h4>
+      <ul>
+        {recipe.ingredients.map((i, idx) => (
+          <li key={idx}>{i}</li>
+        ))}
+      </ul>
+
+      <h4 className="mt-4">Steps</h4>
+      <ol>
+        {recipe.steps.map((s, idx) => (
+          <li key={idx}>{s}</li>
+        ))}
+              </ol>
+
+              
+             
+      
+              
+              <p>Created By:{recipe.user } </p>
+              
+    </div>
+
+  </div>
+</div>
+
       </div>
 
       <Footer />

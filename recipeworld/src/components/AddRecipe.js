@@ -10,39 +10,37 @@ export default function AddRecipe() {
     description: "",
     ingredients: "",
     steps: "",
+    cooking_time: "",
+    difficulty: "",
   });
 
- function handleChange(e) {
-  const { name, value } = e.target;
+  function handleChange(e) {
+    const { name, value } = e.target;
 
-  setInputs({
-    ...inputs,
-    [name]: value,
-  });
-}
-
-
-
-async function handleSubmit(e) {
-  e.preventDefault();
-
-  try {
-    const res = await axios.post(
-      "http://localhost:8080/recipes/addRecipe",
-      inputs,  // send JSON
-      {
-        headers: { "Content-Type": "application/json" },
-      }
-    );
-
-    alert("Recipe Added Successfully!");
-
-  } catch (err) {
-    console.error(err);
-    alert("Something went wrong!");
+    setInputs({
+      ...inputs,
+      [name]: value,
+    });
   }
-}
 
+  async function handleSubmit(e) {
+    e.preventDefault();
+
+    try {
+      const res = await axios.post(
+        "http://localhost:8080/recipes/addRecipe",
+        inputs, // send JSON
+        {
+          headers: { "Content-Type": "application/json" },
+        }
+      );
+
+      alert("Recipe Added Successfully!");
+    } catch (err) {
+      console.error(err);
+      alert("Something went wrong!");
+    }
+  }
 
   return (
     <>
@@ -59,14 +57,13 @@ async function handleSubmit(e) {
             className="form-control mb-3"
             onChange={handleChange}
           />
-<input
-  type="text"
-  name="image"
-  placeholder="Image URL"
-  className="form-control mb-3"
-  onChange={handleChange}
-/>
-         
+          <input
+            type="text"
+            name="image"
+            placeholder="Image URL"
+            className="form-control mb-3"
+            onChange={handleChange}
+          />
 
           <textarea
             name="ingredients"
@@ -83,6 +80,25 @@ async function handleSubmit(e) {
             rows="4"
             onChange={handleChange}
           />
+
+          <input
+            type="text"
+            name="cooking_time"
+            placeholder="Cooking time"
+            className="form-control mb-3"
+            onChange={handleChange}
+          />
+
+          <select
+            name="difficulty"
+            className="form-control mb-3"
+            onChange={handleChange}
+          >
+            <option value="">Select Difficulty</option>
+            <option value="Easy">Easy</option>
+            <option value="Medium">Medium</option>
+            <option value="Hard">Hard</option>
+          </select>
 
           <button className="btn btn-primary w-100">Add Recipe</button>
         </form>
