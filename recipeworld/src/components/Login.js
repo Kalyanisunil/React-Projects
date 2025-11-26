@@ -6,14 +6,14 @@ import axios from "axios";
 export default function Login() {
   const [rightPanel, setRightPanel] = useState(false);
 
-  // ========= Signup form state =========
+
   const [signupData, setSignupData] = useState({
     name: "",
     email: "",
     password: "",
   });
 
-  // ========= Login form state =========
+  
   const [loginData, setLoginData] = useState({
     email: "",
     password: "",
@@ -119,7 +119,7 @@ export default function Login() {
               }
             />
 
-            <Link to="/">Forgot your password?</Link>
+
 
             <button type="submit">Sign In</button>
           </form>
