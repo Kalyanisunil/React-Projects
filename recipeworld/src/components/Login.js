@@ -28,8 +28,9 @@ export default function Login() {
     try {
       const res = await axios.post("http://localhost:8080/recipes/signup", signupData);
       console.log("Signup success:", res.data);
+      
 
-      // alert("Signup successful!");
+      alert("Signup successful!");
       navigate("/login"); 
     } catch (err) {
       console.error("Signup error:", err);
@@ -44,7 +45,8 @@ export default function Login() {
     try {
       const res = await axios.post("http://localhost:8080/recipes/login", loginData);
       console.log("Login success:", res.data);
-      localStorage.setItem("token",res.data.token)
+      localStorage.setItem("token", res.data.token)
+      localStorage.setItem("userId", res.data.userId);
       
       navigate("/"); // go home
     } catch (err) {

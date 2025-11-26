@@ -4,14 +4,16 @@ import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 
 export default function AddRecipe() {
+   const userId = localStorage.getItem("userId");
   const [inputs, setInputs] = useState({
     title: "",
     image: "",
-    description: "",
     ingredients: "",
     steps: "",
     cooking_time: "",
     difficulty: "",
+    userId:userId
+    
   });
 
   function handleChange(e) {
@@ -22,9 +24,12 @@ export default function AddRecipe() {
       [name]: value,
     });
   }
+ 
+
 
   async function handleSubmit(e) {
     e.preventDefault();
+
 
     try {
      var  token=localStorage.getItem("token")

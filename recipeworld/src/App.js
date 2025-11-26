@@ -34,7 +34,7 @@ export default function App() {
         <Route path="/" element={<Hero />} />
         <Route path="/login" element={<Login></Login>} />
          <Route path="/add" element={<AddRecipe />} />
-
+        
         <Route path="/recipe/:id" element={<RecipeDetails />} />
 
         <Route path="/profile" element={<Profile />} />
