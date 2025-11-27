@@ -10,6 +10,7 @@ import AddRecipe from "./components/AddRecipe";
 import RecipeDetails from "./components/RecipeDetails";
 import Profile from "./components/Profile";
 import EditRecipe from "./components/EditRecipe";
+import RecipeWorldLanding from "./components/RecipeWorldLanding";
 
 export default function App() {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
@@ -19,19 +20,21 @@ export default function App() {
       <Routes>
 
      
-        {/* <Route 
+         <Route 
           path="/" 
           element={
-            isLoggedIn ? <Hero /> : <Navigate to="/login" replace />
+             <RecipeWorldLanding />  
           } 
-        />
+        /> 
 
        
         <Route 
           path="/login" 
           element={<Login onLogin={() => setIsLoggedIn(true)} />} 
-        /> */}
-        <Route path="/" element={<Hero />} />
+        /> 
+
+        <Route path="/" element={<RecipeWorldLanding />} />
+        <Route path="/home" element={<Hero />} />
         <Route path="/login" element={<Login></Login>} />
          <Route path="/add" element={<AddRecipe />} />
         
